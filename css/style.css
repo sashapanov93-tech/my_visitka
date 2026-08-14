@@ -1,0 +1,37 @@
+:root { --dark: #040404; --accent: #2f9eaa; --accent-dark: #207782; --surface: #fff; --bg: #eef4f5; --text: #1d292b; --muted: #5b6c70; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font: 16px/1.6 Arial, sans-serif; }
+.hero { position: relative; padding: 42px 20px 36px; text-align: center; color: #fff; background: radial-gradient(circle at top, #263f43, var(--dark) 62%); }
+.language-switch { position: absolute; top: 18px; right: 18px; display: flex; gap: 6px; }
+.language-switch button { min-width: 42px; padding: 5px 9px; color: #fff; background: transparent; border: 1px solid #8da1a4; border-radius: 7px; cursor: pointer; }
+.language-switch button[aria-pressed="true"] { background: #fff; color: var(--dark); border-color: #fff; }
+.avatar { display: block; width: 120px; height: 120px; margin: 0 auto 16px; object-fit: cover; border: 3px solid #fff; border-radius: 50%; }
+h1 { margin: 0; font-size: clamp(2rem, 6vw, 3rem); }
+.hero-role { margin: 7px 0; font-weight: 700; }
+.hero-subtitle { max-width: 690px; margin: 12px auto 0; color: #d4e1e3; }
+main { max-width: 960px; margin: 0 auto; padding: 20px; }
+section { margin: 0 0 20px; padding: clamp(20px, 4vw, 32px); background: var(--surface); border-radius: 14px; box-shadow: 0 5px 22px rgba(19, 45, 49, .09); }
+h2 { margin: 0 0 14px; font-size: 1.55rem; }
+section p:last-of-type { margin-bottom: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 14px; }
+.card { min-height: 132px; padding: 20px; text-align: left; color: var(--text); background: #e2f5f6; border: 1px solid #c8e8eb; border-radius: 11px; }
+.card span, .card small { display: block; }
+.card span { font-weight: 700; font-size: 1.05rem; }
+.card small { margin-top: 7px; color: var(--muted); line-height: 1.45; }
+.service-card { font: inherit; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s; }
+.service-card:hover, .service-card:focus-visible { background: #cceff1; transform: translateY(-4px); box-shadow: 0 9px 18px rgba(19, 75, 81, .16); outline: none; }
+a { color: var(--accent-dark); }
+.social, .submit { display: inline-block; padding: 10px 15px; color: #fff; background: var(--accent); border: 0; border-radius: 8px; font: inherit; text-decoration: none; cursor: pointer; }
+.social:hover, .submit:hover { background: var(--accent-dark); }
+dialog { width: min(92vw, 470px); padding: 0; border: 0; border-radius: 14px; box-shadow: 0 15px 45px rgba(0, 0, 0, .35); }
+dialog::backdrop { background: rgba(0, 0, 0, .65); }
+.modal-box { position: relative; display: grid; gap: 13px; padding: 26px; }
+.modal-box h2 { padding-right: 28px; }
+.modal-box label { display: grid; gap: 5px; font-weight: 700; }
+.modal-box input, .modal-box textarea { width: 100%; padding: 10px; color: var(--text); font: inherit; border: 1px solid #afc3c6; border-radius: 7px; }
+.modal-box textarea { min-height: 100px; resize: vertical; }
+.close { position: absolute; top: 13px; right: 15px; padding: 0 6px; color: var(--text); background: transparent; border: 0; font-size: 28px; line-height: 1; cursor: pointer; }
+.notice { position: fixed; right: 20px; bottom: 20px; max-width: min(400px, calc(100vw - 40px)); margin: 0; padding: 12px 16px; color: #fff; background: #176b45; border-radius: 8px; box-shadow: 0 6px 18px rgba(0, 0, 0, .2); }
+footer { padding: 22px; color: #d7e1e2; text-align: center; background: #1c292b; }
+@media (max-width: 520px) { .hero { padding-top: 68px; } main { padding: 12px; } section { padding: 20px; } }
