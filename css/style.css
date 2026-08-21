@@ -23,6 +23,7 @@ section p:last-of-type { margin-bottom: 0; }
 .service-card:hover, .service-card:focus-visible { background: #cceff1; transform: translateY(-4px); box-shadow: 0 9px 18px rgba(19, 75, 81, .16); outline: none; }
 a { color: var(--accent-dark); }
 .social, .submit { display: inline-block; padding: 10px 15px; color: #fff; background: var(--accent); border: 0; border-radius: 8px; font: inherit; text-decoration: none; cursor: pointer; }
+.social { margin-top: 18px; }
 .social:hover, .submit:hover { background: var(--accent-dark); }
 dialog { width: min(92vw, 470px); padding: 0; border: 0; border-radius: 14px; box-shadow: 0 15px 45px rgba(0, 0, 0, .35); }
 dialog::backdrop { background: rgba(0, 0, 0, .65); }
