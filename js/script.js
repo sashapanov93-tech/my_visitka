@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const notice = document.getElementById('notice');
 
   // После создания backend в Render замени только адрес ниже.
-  const CONTACT_API_URL = 'https://YOUR-BACKEND.onrender.com/api/contact';
+  const CONTACT_API_URL = 'https://my-visitka-api.onrender.com/api/contact';
 
   const setLanguage = (lang) => {
     document.documentElement.lang = lang;
