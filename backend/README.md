@@ -1,8 +1,12 @@
 # Portfolio Requests Backend
 
-Small Flask API for securely forwarding portfolio contact-form submissions to Telegram.
+Небольшой Flask API, который принимает заявки с сайта и отправляет их в
+Telegram. Bot token и `chat_id` должны существовать только в переменных
+окружения backend — никогда в HTML, JavaScript, Git или сообщениях об ошибках.
 
-## Render settings
+## Настройка Render
+
+Создайте Web Service с корневой папкой `backend`.
 
 Build command:
 
@@ -10,20 +14,70 @@ Build command:
 
 Start command:
 
-    gunicorn app:app
+    gunicorn -c gunicorn.conf.py app:app
 
 Health check path:
 
     /healthz
 
-Environment variables:
+Обязательные переменные окружения:
 
-- TELEGRAM_BOT_TOKEN
-- TELEGRAM_CHAT_ID
-- ALLOWED_ORIGIN
+- `TELEGRAM_BOT_TOKEN` — актуальный token, созданный через BotFather;
+- `TELEGRAM_CHAT_ID` — числовой ID получателя;
+- `ALLOWED_ORIGINS` — один или несколько точных адресов frontend через
+  запятую, например `https://sashapanov93-tech.github.io`.
 
-`ALLOWED_ORIGIN` must be the exact public origin of your portfolio site, for example:
+Рекомендуемая переменная:
 
-    https://my-visitka.onrender.com
+- `TRUSTED_HOSTS` — допустимые имена API через запятую, например
+  `my-visitka-api.onrender.com` и ваш собственный домен, если он подключён.
 
-Do not put the Telegram bot token into HTML or JavaScript.
+Остальные параметры имеют безопасные значения по умолчанию и перечислены в
+`.env.example`. Render автоматически задаёт `RENDER=true`; в этой среде API
+использует защищённый Cloudflare-заголовок `CF-Connecting-IP` для лимитов.
+Вне Render этот заголовок не считается доверенным.
+
+## Что защищено в приложении
+
+- максимум 16 KiB на тело запроса;
+- общий лимит запросов и отдельный строгий лимит формы;
+- ограниченное по размеру, потокобезопасное хранилище лимитов;
+- игнорирование поддельного `X-Forwarded-For`;
+- точный allowlist CORS и серверная проверка `Origin`;
+- honeypot для простых спам-ботов;
+- ограничение длины сообщения Telegram;
+- короткие сетевые timeout;
+- ответы без кэширования и с защитными HTTP-заголовками;
+- логи без текста заявки, Telegram URL, token и тела ответа Telegram.
+
+`Origin` и CORS не являются паролем: небраузерный клиент может подставить
+заголовок вручную. Лимиты и honeypot уменьшают прикладной спам, но для формы с
+большим трафиком дополнительно понадобится Cloudflare Turnstile с обязательной
+проверкой token на backend.
+
+Текущий limiter хранится в памяти одного процесса, поэтому Gunicorn намеренно
+запускает один процесс и несколько потоков. Перед масштабированием на несколько
+процессов или Render instances перенесите счётчики в общий Render Key Value
+(Redis-compatible) storage.
+
+## Граница DDoS-защиты
+
+Все публичные Render Web Services и Static Sites автоматически проходят через
+Cloudflare DDoS protection. Код приложения дополнительно ограничивает целевые
+HTTP-запросы уровня L7. Один Flask limiter не способен остановить объёмную
+сетевую атаку до её прихода на сервер, поэтому не отключайте edge-защиту и не
+проводите DoS-нагрузочные тесты против Render.
+
+Публичный сайт нельзя сделать невидимым или полностью «неотслеживаемым»:
+посетителю всегда доступны HTML/CSS/JS, DNS и адрес API. В этом репозитории нет
+AI-промта. Приватными должны оставаться только серверные секреты и внутренние
+данные; адрес публичного API секретом не является.
+
+## Локальная проверка
+
+Создайте виртуальное окружение, установите зависимости и задайте тестовые
+переменные окружения. Затем выполните:
+
+    python -m unittest -v test_app.py
+
+Не используйте настоящий Telegram token в тестах.

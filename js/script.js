@@ -134,6 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const response = await fetch(CONTACT_API_URL, {
           method: 'POST',
+          mode: 'cors',
+          credentials: 'omit',
+          cache: 'no-store',
+          referrerPolicy: 'no-referrer',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -153,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         showNotice(true);
       } catch (error) {
-        console.error('Contact form error:', error);
+        console.error('Contact form request failed');
         showNotice(false);
       } finally {
         if (submitButton) {

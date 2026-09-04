@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Fizruk_666 — junior full-stack developer: сайты, Telegram-боты, автоматизация и поддержка проектов.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src https://my-visitka-api.onrender.com; form-action 'none'; upgrade-insecure-requests">
   <title>Fizruk_666 — Full-Stack Developer & AI</title>
+  <link rel="icon" type="image/jpeg" href="img/pintester.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -36,6 +39,92 @@
       </div>
     </section>
 
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker" data-ru="Портфолио" data-en="Portfolio">Портфолио</p>
+          <h2 id="projects-title" data-ru="Мои проекты" data-en="My projects">Мои проекты</h2>
+        </div>
+        <a href="https://github.com/sashapanov93-tech" class="github-profile-link" target="_blank" rel="noopener noreferrer">
+          <span data-ru="Мой GitHub" data-en="My GitHub">Мой GitHub</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <p class="section-intro" data-ru="Практические продукты, в которых я развиваю backend, frontend, базы данных, автоматизацию и AI-интеграции." data-en="Practical products where I develop backend, frontend, databases, automation, and AI integrations.">Практические продукты, в которых я развиваю backend, frontend, базы данных, автоматизацию и AI-интеграции.</p>
+
+      <div class="project-grid">
+        <article class="project-card project-card--safeai">
+          <div class="project-card-top">
+            <span class="project-mark" aria-hidden="true">S</span>
+            <span class="project-status" data-ru="Активная разработка" data-en="Active development">Активная разработка</span>
+          </div>
+          <h3>SafeAI</h3>
+          <p class="project-description" data-ru="AI-помощник в Telegram с персональной памятью, анализом безопасности, SOS-сценариями, доверенными контактами и голосовым взаимодействием." data-en="An AI-powered Telegram assistant with personal memory, safety analysis, SOS workflows, trusted contacts, and voice interaction.">AI-помощник в Telegram с персональной памятью, анализом безопасности, SOS-сценариями, доверенными контактами и голосовым взаимодействием.</p>
+          <ul class="project-tech">
+            <li>Python</li>
+            <li>Telegram Bot API</li>
+            <li>SQLite</li>
+            <li>AI</li>
+            <li>ONNX</li>
+          </ul>
+          <p class="project-note" data-ru="Проект не заменяет экстренные и профессиональные службы." data-en="This project does not replace emergency or professional services.">Проект не заменяет экстренные и профессиональные службы.</p>
+          <div class="project-links">
+            <a href="https://t.me/sos_suiHelp_bot" class="project-link project-link--primary" target="_blank" rel="noopener noreferrer">
+              <span data-ru="Открыть SafeAI-бота" data-en="Open the SafeAI bot">Открыть SafeAI-бота</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://github.com/sashapanov93-tech/safeai" class="project-link" target="_blank" rel="noopener noreferrer">
+              <span data-ru="Код на GitHub" data-en="Code on GitHub">Код на GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card project-card--zooland">
+          <div class="project-card-top">
+            <span class="project-mark" aria-hidden="true">Z</span>
+            <span class="project-status" data-ru="Большой проект · в разработке" data-en="Large project · in development">Большой проект · в разработке</span>
+          </div>
+          <h3>ZooLand</h3>
+          <p class="project-description" data-ru="ZooLand — большой full-stack проект, который ещё пишется и активно развивается. Это русскоязычная площадка объявлений о животных, услугах и кормах с изображениями, фильтрацией и адаптивным интерфейсом." data-en="ZooLand is a large full-stack project that is still being built and actively developed. It is a Russian-language marketplace for animals, services, and pet food with image uploads, filtering, and a responsive interface.">ZooLand — большой full-stack проект, который ещё пишется и активно развивается. Это русскоязычная площадка объявлений о животных, услугах и кормах с изображениями, фильтрацией и адаптивным интерфейсом.</p>
+          <ul class="project-tech">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>SQLite</li>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/sashapanov93-tech#-zooland" class="project-link" target="_blank" rel="noopener noreferrer">
+              <span data-ru="Описание на GitHub" data-en="Details on GitHub">Описание на GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card project-card--visitka">
+          <div class="project-card-top">
+            <span class="project-mark" aria-hidden="true">M</span>
+            <span class="project-status" data-ru="Этот сайт" data-en="This website">Этот сайт</span>
+          </div>
+          <h3>My Visitka</h3>
+          <p class="project-description" data-ru="Двуязычный адаптивный сайт-портфолио с информацией об опыте, услугах и проектах, а также с безопасной отправкой заявок через отдельный Flask API." data-en="A bilingual responsive portfolio presenting my experience, services, and projects, with secure request delivery through a separate Flask API.">Двуязычный адаптивный сайт-портфолио с информацией об опыте, услугах и проектах, а также с безопасной отправкой заявок через отдельный Flask API.</p>
+          <ul class="project-tech">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Flask API</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/sashapanov93-tech/my_visitka" class="project-link" target="_blank" rel="noopener noreferrer">
+              <span data-ru="Код на GitHub" data-en="Code on GitHub">Код на GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section aria-labelledby="services-title">
       <h2 id="services-title" data-ru="Чем могу помочь" data-en="How I can help">Чем могу помочь</h2>
       <div class="cards">
@@ -47,9 +136,19 @@
 
     <section id="contacts" aria-labelledby="contacts-title">
       <h2 id="contacts-title" data-ru="Контакты" data-en="Contacts">Контакты</h2>
-  
-      
-      <a href="https://t.me/pitbull153193" class="social" target="_blank" rel="noopener">Telegram</a>
+      <div class="contact-links">
+        <a href="https://t.me/pitbull153193" class="social" target="_blank" rel="noopener noreferrer">
+          <span data-ru="Написать в Telegram" data-en="Message me on Telegram">Написать в Telegram</span>
+        </a>
+        <a href="mailto:sasha.panov.93@gmail.com" class="social social--secondary">
+          <span data-ru="Написать на почту" data-en="Send me an email">Написать на почту</span>
+        </a>
+        <a href="https://t.me/sos_suiHelp_bot" class="social social--secondary" target="_blank" rel="noopener noreferrer">
+          <span data-ru="Открыть SafeAI-бота" data-en="Open the SafeAI bot">Открыть SafeAI-бота</span>
+        </a>
+        <a href="https://www.linkedin.com/in/oleksandr-panov-000967424/" class="social social--secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/sashapanov93-tech" class="social social--secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
     </section>
   </main>
 
