@@ -43,6 +43,7 @@ a { color: var(--accent-dark); }
 .project-card--zooland .project-mark { background: #8d531a; }
 .project-card--visitka .project-mark { background: #455891; }
 .project-status { padding: 5px 9px; color: #3f565a; background: #fff; border: 1px solid #c9dde0; border-radius: 999px; font-size: .72rem; font-weight: 700; line-height: 1.2; text-align: center; }
+.project-status--live { color: #1d6b3f; background: #edfaf1; border-color: #b7e3c8; }
 .project-card h3 { margin: 17px 0 8px; font-size: 1.35rem; }
 .project-description { margin: 0; color: #35494d; line-height: 1.55; }
 .project-tech { display: flex; flex-wrap: wrap; gap: 7px; margin: 17px 0 0; padding: 0; list-style: none; }
